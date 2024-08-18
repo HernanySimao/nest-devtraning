@@ -9,7 +9,7 @@ findAll(){
 }
 
 @Get(':id')
-findOne(@Param() params){
-  return `Buscando o curso com ID: ${params.id}`
+findOne(@Param('id') id: string){
+  return `Buscando o curso com ID: ${id}`
 }
 }
