@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { get } from 'http';
 
 @Controller('courses')
@@ -12,4 +12,9 @@ findAll(){
 findOne(@Param('id') id: string){
   return `Buscando o curso com ID: ${id}`
 }
+
+@Post()
+  create(@Body() body){
+   return body;
+  }
 }
