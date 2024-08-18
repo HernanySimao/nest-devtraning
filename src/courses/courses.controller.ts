@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put, Res, Delete } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put, Res, Delete, HttpCode } from '@nestjs/common';
 import { response } from 'express';
 
 @Controller('courses')
@@ -23,6 +23,7 @@ update(@Body() body, @Param('id') id: string){
   return "Atualizando curso"
 }
 
+@HttpCode(204)
 @Delete(':id')
 remove(@Param('id') id: string){
   return "Deletando curso"
