@@ -1,11 +1,11 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { get } from 'http';
+import { Body, Controller, Get, Param, Post, Put, Res, Delete } from '@nestjs/common';
+import { response } from 'express';
 
 @Controller('courses')
 export class CoursesController {
 @Get()
-findAll(){
-    return "Listando os cursos"
+findAll(@Res() response){
+    return response.status(200).json({message: "Listando os cursos"})
 }
 
 @Get(':id')
@@ -17,4 +17,14 @@ findOne(@Param('id') id: string){
   create(@Body() body){
    return body;
   }
+
+@Put(':id')
+update(@Body() body, @Param('id') id: string){
+  return "Atualizando curso"
+}
+
+@Delete(':id')
+remove(@Param('id') id: string){
+  return "Deletando curso"
+}
 }
