@@ -23,6 +23,7 @@ export class CoursesService {
 
     create(createCoursesDTO: any){
     this.courses.push(createCoursesDTO)
+    return createCoursesDTO
     }
 
     update(id: number, updateCoursesDTO: any){
