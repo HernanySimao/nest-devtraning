@@ -38,7 +38,7 @@ export class CoursesService {
 
     remove(id: number){
         const idx = this.courses.findIndex(course=> course.id === id)
-        if(idx >=0){
+        if(idx >=0 ){
             this.courses.splice(idx, 1)
         }
     }
