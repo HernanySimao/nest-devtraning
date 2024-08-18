@@ -24,7 +24,7 @@ findOne(@Param('id') id: number){
   }
 
 @Put(':id')
-update(@Body() UpdateCoursesDTO:UpdateCoursesDTO, @Param('id') id: number){
+update(@Body() UpdateCoursesDTO: UpdateCoursesDTO, @Param('id') id: number){
   return this.courseService.update(+id, UpdateCoursesDTO)
 }
 
