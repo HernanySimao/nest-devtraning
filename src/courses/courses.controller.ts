@@ -14,7 +14,7 @@ findAll(){
 }
 
 @Get(':id')
-findOne(@Param('id') id: number){
+findOne(@Param('id') id: String){
   return this.courseService.findOne(id)
 }
 
@@ -24,13 +24,13 @@ findOne(@Param('id') id: number){
   }
 
 @Put(':id')
-update(@Body() UpdateCoursesDTO: UpdateCoursesDTO, @Param('id') id: number){
+update(@Body() UpdateCoursesDTO: UpdateCoursesDTO, @Param('id') id: String){
   return this.courseService.update(id, UpdateCoursesDTO)
 }
 
 @HttpCode(HttpStatus.NO_CONTENT)
 @Delete(':id')
-remove(@Param('id') id: number){
+remove(@Param('id') id: String){
   return this.courseService.remove(id)
 }
 }
